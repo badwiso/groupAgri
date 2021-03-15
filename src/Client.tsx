@@ -1,7 +1,17 @@
 import React from 'react';
-import './App.global.css';
+import List from './components/List';
+import ClientListItem from './components/ClientListItem';
+import dataGen from './models/Client';
 
 export default function Client() {
-  console.log("client !!");
-  return <div>Mellow</div>;
+  const cols = ['ref', 'name', 'cin', 'region', 'status'];
+  const tbName = 'الحرفاء';
+  return (
+    <List
+      cols={cols}
+      tbName={tbName}
+      useComponent={ClientListItem}
+      data={dataGen(50)}
+    />
+  );
 }
